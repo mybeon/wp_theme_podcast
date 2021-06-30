@@ -1,5 +1,5 @@
 <section class="newsletter_form pd">
-      <h2>New Episode Every Week!</h2>
+      <h2><?php esc_html_e("New Episode Every Week!", "themegocast") ?></h2>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.
@@ -9,10 +9,10 @@
           type="email"
           name="email"
           id="email-newsletter"
-          placeholder="Type Your Email"
+          placeholder="<?php esc_html_e("Type Your Email", "themegocast")?>"
         />
         <button type="submit" class="btn">
-          subscribe<img src="<?php echo get_theme_file_uri("/src/assets/svg/arrow.svg") ?>" alt="" />
+         <?php esc_html_e("subscribe", "themegocast") ?><img src="<?php echo get_theme_file_uri("/src/assets/svg/arrow.svg") ?>" alt="" />
         </button>
       </form>
     </section>

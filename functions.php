@@ -139,6 +139,9 @@ function filter_note_request($data) {
 
 add_filter('wp_insert_post_data', 'filter_note_request');
 
+add_action('init', function() {
+	load_theme_textdomain( "themegocast", get_theme_file_path('/languages'));
+});
 
 require get_theme_file_path( 'inc/TGM.php' );
 require get_theme_file_path( 'inc/edit_fields.php' );
