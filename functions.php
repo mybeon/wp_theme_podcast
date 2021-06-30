@@ -4,7 +4,7 @@
 
 function gocats_custom_rest() {
 	register_rest_field( "post", "theauthor", array(
-		'get_callback' => function () {return get_author_name();}  
+		'get_callback' => function () {return get_the_author_meta('display_name');}  
 	));
 
 }
@@ -22,7 +22,7 @@ function page_banner($args = NULL) {
     ?>
 	<section class="page_section notes_section">
       <h1><?php echo $args['title'] ?></h1>
-      <div class="links"><a href="<?php echo home_url(); ?>">home</a> / <a href="#"><?php echo $args['title'] ?></a></div>
+      <div class="links"><a href="<?php echo esc_url(home_url()); ?>">home</a> / <a href="#"><?php echo $args['title'] ?></a></div>
     </section>
 <?php }
 
@@ -46,7 +46,7 @@ function gocast_theme_add_styles() {
     //wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;700&display=swap');
 	wp_enqueue_script( 'search', get_theme_file_uri('/js/search.js'), false, 1.0, true );
 	wp_localize_script( 'search', 'gocastVariables', array(
-		"main_url" => get_site_url(),
+		"main_url" => home_url(),
 		"nonce" => wp_create_nonce("wp_rest")
 	));
 
@@ -65,7 +65,8 @@ add_action('wp_enqueue_scripts', 'gocast_theme_add_styles');
 function gogast_theme_support() {
     add_theme_support( 'post-thumbnails');
     add_theme_support('custom-logo');
-	add_theme_support('title-tag');		
+	add_theme_support('title-tag');
+	add_theme_support('automatic-feed-links');		
 };
 
 add_action('init', 'gogast_theme_support');
@@ -75,8 +76,8 @@ add_action('init', 'gogast_theme_support');
 function gogast_theme_add_menus() {
 
     register_nav_menus(array(
-        'primary' => __('Header Menu'),
-        'footer' => __('Footer Menu'),
+        'primary' => __('Header Menu', 'themegocast'),
+        'footer' => __('Footer Menu', 'themegocast'),
     ));
 };
 
@@ -89,7 +90,7 @@ function redirect_user_to_front_page() {
 	$myCurrentUser = wp_get_current_user();
 
 	if( count($myCurrentUser->roles) == 1 AND $myCurrentUser->roles[0] == "user" ) {
-		wp_redirect( site_url("/"));
+		wp_redirect( home_url());
 		exit;
 	};
 };
@@ -110,7 +111,7 @@ add_action('wp_loaded', 'hide_user_admin_bar');
 // Change url in login
 
 function change_url_login_user() {
-	return esc_url( site_url('/'));
+	return esc_url( home_url());
 };
 
 add_filter('login_headerurl', "change_url_login_user");
@@ -139,9 +140,29 @@ function filter_note_request($data) {
 
 add_filter('wp_insert_post_data', 'filter_note_request');
 
+// 	add text domain
+
 add_action('init', function() {
 	load_theme_textdomain( "themegocast", get_theme_file_path('/languages'));
 });
+
+// insert chat scripts
+
+add_action('wp_footer', function () { ?>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+		s1.async=true;
+		s1.src='https://embed.tawk.to/60a97efba4114e480ad05ab0/1f6b1g25q';
+		s1.charset='UTF-8';
+		s1.setAttribute('crossorigin','*');
+		s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+<!--End of Tawk.to Script-->
+<?php });
 
 require get_theme_file_path( 'inc/TGM.php' );
 require get_theme_file_path( 'inc/edit_fields.php' );

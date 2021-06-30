@@ -27,7 +27,7 @@ function gocast_fetch_api($data) {
         if(get_post_type() == "post" || get_post_type() == "page") {
             array_push($allResult['generalinfo'], array(
                 'title' => get_the_title(),
-                'author' => get_author_name(),
+                'author' => get_the_author_meta('display_name'),
                 "link" => get_the_permalink(),
                 "type" => get_post_type()
             ));

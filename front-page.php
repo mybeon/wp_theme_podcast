@@ -3,12 +3,12 @@
       <div class="main_content">
         <div class="mini_heading">
           <div class="line"></div>
-          <span><?php __('trending post') ?></span>
+          <span><?php _e('trending post', 'gocast-theme') ?></span>
         </div>
 
-        <h1><?php echo get_theme_mod( 'trending_podcast_title' ) ?></h1>
+        <h1><?php echo esc_html(get_theme_mod( 'trending_podcast_title' )) ?></h1>
         <p>
-          <?php echo get_theme_mod( 'trending_podcast_description' ) ?>
+          <?php echo esc_html(get_theme_mod( 'trending_podcast_description' )) ?>
         </p>
         <div class="audio_player">
           <button class="play_btn" aria-label="play button"><i class="fas fa-play-circle"></i></button>
@@ -16,7 +16,7 @@
           <div class="progress_bar"><input type="range" aria-label="podcast progress" id=""></div>
           <span class="total_time"></span>
           <div class="volume"><button aria-label="volume button"><i class="fas fa-volume-up"></i></button><input type="range" aria-label="volume range" id=""></div>
-          <audio src="<?php echo get_theme_mod( 'trending_podcast_url' ) ?>"></audio>
+          <audio src="<?php echo esc_html(get_theme_mod( 'trending_podcast_url' )) ?>"></audio>
         </div>
         <div class="mini_heading">
           <span>listen on also</span>

@@ -10,7 +10,8 @@ $wp_customize->add_section('page-about-section', array(
 ));
 
 $wp_customize->add_setting('page-about-headline', array(
-    'default' => '',
+    'default' => 'about page headline',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -23,7 +24,8 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 
 
 $wp_customize->add_setting('page-about-text', array(
-    'default' => '',
+    'default' => 'about text',
+    'sanitize_callback' => 'sanitize_textarea_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -44,6 +46,7 @@ $wp_customize->add_section('social-link-section', array(
 // INSTA
 $wp_customize->add_setting('instagram-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -57,6 +60,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 // LINKEDIN
 $wp_customize->add_setting('linkedin-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -70,6 +74,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 //SKYPE
 $wp_customize->add_setting('skype-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -83,6 +88,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 //FACEBOOK
 $wp_customize->add_setting('facebook-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -96,6 +102,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 //SPOTIFY
 $wp_customize->add_setting('spotify-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -109,6 +116,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 //APPLE
 $wp_customize->add_setting('apple-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -122,6 +130,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize
 //Google
 $wp_customize->add_setting('google-link', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize
@@ -142,6 +151,7 @@ $wp_customize->add_section('trending_podcast_section', array(
 $wp_customize->add_setting('trending_podcast_title', array(
     'default' => 'Dreams of an unique ideas scattered through a deserted.
     ',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trending_podcast_title_control', array(
@@ -153,6 +163,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trending_po
 
 $wp_customize->add_setting('trending_podcast_description', array(
     'default' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua',
+    'sanitize_callback' => 'sanitize_textarea_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trending_podcast_description_control', array(
@@ -165,6 +176,7 @@ $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trending_po
 
 $wp_customize->add_setting('trending_podcast_url', array(
     'default' => '',
+    'sanitize_callback' => 'sanitize_text_field'
 ));
 
 $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trending_podcast_url_control', array(

@@ -1,5 +1,5 @@
 <section class="newsletter_form pd">
-      <h2><?php esc_html_e("New Episode Every Week!", "themegocast") ?></h2>
+      <h2><?php esc_html_e("New Episode Every Week!", "gocast-theme") ?></h2>
       <p>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
         eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed.
@@ -9,10 +9,10 @@
           type="email"
           name="email"
           id="email-newsletter"
-          placeholder="<?php esc_html_e("Type Your Email", "themegocast")?>"
+          placeholder="<?php esc_attr_e("Type Your Email", "gocast-theme")?>"
         />
         <button type="submit" class="btn">
-         <?php esc_html_e("subscribe", "themegocast") ?><img src="<?php echo get_theme_file_uri("/src/assets/svg/arrow.svg") ?>" alt="" />
+         <?php esc_html_e("subscribe", "gocast-theme") ?><img src="<?php echo get_theme_file_uri("/src/assets/svg/arrow.svg") ?>" alt="" />
         </button>
       </form>
     </section>
@@ -29,13 +29,13 @@
           <div class="social_links">
             <span class="footer_heading">socials</span>
             <div class="links">
-              <a rel="noopener" aria-label="instagram link" href="<?php echo get_theme_mod('instagram-link') ?>" target="_blank"
+              <a rel="noopener" aria-label="instagram link" href="<?php echo esc_url(get_theme_mod('instagram-link')) ?>" target="_blank"
                 ><img src="<?php echo get_theme_file_uri("src/assets/svg/instagram.svg") ?>" alt="" /></a
-              ><a rel="noopener" aria-label="linkedin link" href="<?php echo get_theme_mod('linkedin-link') ?>" target="_blank"
+              ><a rel="noopener" aria-label="linkedin link" href="<?php echo esc_url(get_theme_mod('linkedin-link')) ?>" target="_blank"
                 ><img src="<?php echo get_theme_file_uri("src/assets/svg/linkedin.svg") ?>" alt="" /></a
-              ><a rel="noopener" aria-label="facebook link" href="<?php echo get_theme_mod('facebook-link') ?>" target="_blank"
+              ><a rel="noopener" aria-label="facebook link" href="<?php echo esc_url(get_theme_mod('facebook-link')) ?>" target="_blank"
                 ><img src="<?php echo get_theme_file_uri("src/assets/svg/facebook.svg") ?>" alt="" /></a
-              ><a rel="noopener" aria-label="skype link" href="<?php echo get_theme_mod('skype-link') ?>" target="_blank"
+              ><a rel="noopener" aria-label="skype link" href="<?php echo esc_url(get_theme_mod('skype-link')) ?>" target="_blank"
                 ><img src="<?php echo get_theme_file_uri("src/assets/svg/skype.svg") ?>" alt=""
               /></a>
             </div>
@@ -74,18 +74,5 @@
     </footer>
     <div class="preloader"><i class="fas fa-spinner" aria-hidden="true"></i></div>
     <?php wp_footer(); ?>
-    <!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-		(function(){
-		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-		s1.async=true;
-		s1.src='https://embed.tawk.to/60a97efba4114e480ad05ab0/1f6b1g25q';
-		s1.charset='UTF-8';
-		s1.setAttribute('crossorigin','*');
-		s0.parentNode.insertBefore(s1,s0);
-		})();
-	</script>
-<!--End of Tawk.to Script-->
   </body>
 </html>

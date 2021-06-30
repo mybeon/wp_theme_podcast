@@ -12,10 +12,10 @@ page_banner();
       </div>
       <div class="about_text">
         <h2>
-          <?php echo get_theme_mod('page-about-headline'); ?>
+          <?php echo esc_html(get_theme_mod('page-about-headline')); ?>
         </h2>
         <p>
-        <?php echo get_theme_mod('page-about-text') ?>
+        <?php echo esc_html(get_theme_mod('page-about-text')) ?>
         </p>
       </div>
     </section>
