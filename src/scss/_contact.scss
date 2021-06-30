@@ -1,0 +1,75 @@
+.form_container {
+  width: 80rem;
+  box-shadow: $mainshadow;
+  border-radius: 8px;
+  margin: -20rem auto 0 auto;
+  background-color: #ffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4rem;
+  form {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding: 0 6rem;
+
+    .upper_container {
+      display: flex;
+      gap: 1rem;
+
+      & > * {
+        flex: 1;
+      }
+    }
+    .container {
+      label {
+        display: block;
+        color: $blackclr;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+      }
+      input,
+      textarea,
+      select {
+        width: 100%;
+        font-size: 1.4rem;
+        color: $blackthree;
+        padding: 1rem;
+        border: none;
+        border-bottom: 1px solid $tetiaryclr;
+        outline: none;
+        margin: 1rem 0 3rem 0;
+
+        &::placeholder {
+          color: #afafaf;
+        }
+      }
+
+      span {
+        span {
+          color: $primaryclr;
+          font-size: 1.4rem;
+          margin: -2rem 0 2rem 0;
+        }
+      }
+
+      textarea {
+        height: 150px;
+      }
+    }
+    .btn {
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .wpcf7-response-output {
+      border: none;
+      color: red;
+      font-size: 1.4rem;
+      margin: 2rem 0;
+      padding: 0;
+    }
+  }
+}

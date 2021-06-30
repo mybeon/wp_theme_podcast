@@ -1,0 +1,189 @@
+.notes_section {
+  .links {
+    display: none;
+  }
+}
+
+.notes_content {
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .notes {
+    ul {
+      li {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+        border-bottom: 2px solid $primaryclr;
+        transition: opacity 500ms ease;
+        position: relative;
+
+        div {
+          display: flex;
+          align-items: center;
+
+          label {
+            flex: 1;
+          }
+        }
+
+        div button {
+          margin-bottom: 1rem;
+          padding: 1rem 1.4rem;
+          text-transform: capitalize;
+          margin-left: 1rem;
+          background-color: $primaryclr;
+          color: white;
+          border-radius: 4px;
+          border: none;
+          cursor: pointer;
+          font-family: "Josefin Sans", sans-serif;
+          border: 2px solid $primaryclr;
+          transition: color 250ms ease, background-color 250ms ease;
+
+          &:hover {
+            color: $primaryclr;
+            background-color: transparent;
+          }
+        }
+
+        label {
+          color: black;
+          text-transform: capitalize;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+        input,
+        textarea {
+          margin-bottom: 4rem;
+          padding: 2rem;
+          border: 1px solid rgba(#000000, 0.2);
+          border-radius: 4px;
+          font-size: 1.4rem;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.popup_note {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 250px;
+  background: white;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid rgba($primaryclr, 0.7);
+  box-shadow: $mainshadow;
+  visibility: hidden;
+}
+
+.save_note {
+  display: block;
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  margin-bottom: 1rem;
+  padding: 1rem 1.4rem;
+  text-transform: capitalize;
+  margin-left: 1rem;
+  background-color: $primaryclr;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  border: 2px solid $primaryclr;
+  display: none;
+  transition: color 250ms ease, background-color 250ms ease;
+
+  &:hover {
+    color: $primaryclr;
+    background-color: transparent;
+  }
+}
+
+.flashy_note {
+  animation: flashy 800ms ease-in-out 100ms infinite alternate;
+}
+
+@keyframes flashy {
+  from {
+    border: 2px solid rgba(#000000, 0.2);
+  }
+  to {
+    border: 2px solid rgba(#000000, 0.9);
+  }
+}
+
+.create_note {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto 10rem auto;
+  position: relative;
+
+  input,
+  textarea {
+    margin-bottom: 1rem;
+    padding: 2rem;
+    border: 1px solid rgba(#000000, 0.2);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    outline: none;
+  }
+
+  button {
+    border: none;
+    width: 50%;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid $primaryclr;
+    transition: color 250ms ease, background-color 250ms ease;
+
+    &:hover {
+      color: $primaryclr;
+      background-color: transparent;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1%;
+    width: 0%;
+    background: rgba(#000000, 0.7);
+    transition: width 800ms ease-in-out;
+  }
+
+  &.bar {
+    &::after {
+      width: 200%;
+    }
+  }
+}
+
+.alert_note {
+  color: red;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  &.alert_active {
+    opacity: 1;
+    visibility: visible;
+    color: red;
+  }
+}

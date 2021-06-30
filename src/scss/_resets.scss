@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $blackclr;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.pd {
+  padding: 0 10rem;
+
+  @media (max-width: 500px) {
+    padding: 0 2rem;
+  }
+}
+
+input,
+select,
+textarea {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.btn {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-radius: 0.3rem;
+  background-color: $primaryclr;
+  color: white;
+  padding: 1.2rem 2rem;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.footer_heading {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-bottom: 4rem;
+}
+
+.section_heading {
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 60px;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}

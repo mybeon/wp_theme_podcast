@@ -1,0 +1,21 @@
+{
+  "name": "wp_theme",
+  "version": "1.0.0",
+  "description": "gocast a podcast wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --config './bs-config.js'",
+    "purge": "purgecss -c purgecss.config.js -o prod"
+  },
+  "author": "hicham",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "purgecss": "^4.0.3"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0"
+  }
+}

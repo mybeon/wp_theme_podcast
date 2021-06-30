@@ -1,0 +1,52 @@
+.about_me {
+  margin-top: -8rem;
+  display: flex;
+  padding: 0 15rem;
+
+  h2 {
+    line-height: 44px;
+    font-size: 3.2rem;
+    margin: 10rem 0 3rem -8rem;
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 23px;
+    color: $blackthree;
+    margin-bottom: 3rem;
+    padding-left: 3rem;
+    width: 60ch;
+  }
+}
+
+.featured {
+  margin: 10rem 0;
+
+  .companies {
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+
+    img {
+      margin: 1rem 2rem;
+    }
+  }
+}
+
+.about_video {
+  p {
+    text-align: center;
+    margin: 0 auto;
+    width: 80ch;
+    font-size: 1.5rem;
+    line-height: 23px;
+    color: $blackthree;
+    margin-bottom: 2rem;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
