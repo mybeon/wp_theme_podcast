@@ -34,7 +34,7 @@ function gocast_theme_add_styles() {
 	wp_deregister_script('lodash');
 	wp_enqueue_style('font-awesome', get_theme_file_uri('/src/scss/purgefa.css'), false, 1.0, 'all');
 
-    if ( is_front_page() || is_page( 'episodes' ) || is_singular("podcasts")) {
+    if ( is_front_page() || is_page( 'episodes' ) || is_singular("podcasts") || is_archive("podcasts")) {
         wp_enqueue_script('audio-script', get_theme_file_uri('/js/audio.js'), false, 1.0, true);
     };
 	
