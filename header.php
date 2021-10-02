@@ -14,27 +14,12 @@
   </head>
   <body <?php body_class(); ?>>
   <?php wp_body_open() ?>
-    <div class="upper_bar">
-      <div>
-        <span>contact us: contact@contact.com</span>
-        <span>call us: +6623665235</span>
-      </div>
-      <div class="upper_bar_btns">
-        <?php if(is_user_logged_in()) { ?>
-          <a href="<?php echo esc_url(site_url("/notes")) ?>">my notes</a>
-            <a href="<?php echo wp_logout_url("/wordev") ?>" class="avatar_btn">
-            <span class="user_avatar" ><?php echo get_avatar(get_current_user_id(), 15) ?></span>
-            <span>log out</span>
-          </a> 
-        <?php }  else { ?>
-          <a href="<?php echo wp_login_url() ?>">login</a>
-          <a href="<?php echo wp_registration_url(); ?>">sign up</a>
-         <?php } ?>
-      </div> 
-    </div>
     <header class="main_header pd">
       <div class="logo">
       <?php the_custom_logo() ?>
+      </div>
+      <div class="burger_menu">
+        <i class="fas fa-bars"></i>
       </div>
       <?php  wp_nav_menu(array(
         'theme_location' => 'primary',

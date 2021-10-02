@@ -114,3 +114,7 @@
 .fa-heartbeat:before {
   content: "\f21e";
 }
+
+.fa-bars:before {
+  content: "\f0c9";
+}

@@ -1,4 +1,28 @@
 .about_me {
+  @media (max-width: 490px) {
+    padding: unset;
+    flex-direction: column;
+
+    h2 {
+      margin: 2rem 0 !important;
+      text-align: center;
+    }
+
+    p {
+      width: 90% !important;
+      padding: 0 !important;
+      margin: 0 auto;
+    }
+
+    .main_img {
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      img {
+        height: 100%;
+      }
+    }
+  }
   margin-top: -8rem;
   display: flex;
   padding: 0 15rem;
@@ -19,6 +43,16 @@
 }
 
 .featured {
+  @media (max-width: 490px) {
+    margin: 2rem 0;
+    h2 {
+      line-height: 35px;
+    }
+    .companies {
+      width: 100% !important;
+      margin-bottom: 5rem !important;
+    }
+  }
   margin: 10rem 0;
 
   .companies {
@@ -35,6 +69,18 @@
 }
 
 .about_video {
+  @media (max-width: 490px) {
+    h2 {
+      line-height: 35px;
+    }
+    p {
+      width: 100% !important;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
   p {
     text-align: center;
     margin: 0 auto;

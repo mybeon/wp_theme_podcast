@@ -37,12 +37,7 @@ function gocast_theme_add_styles() {
     if ( is_front_page() || is_page( 'episodes' ) || is_singular("podcasts") || is_archive("podcasts")) {
         wp_enqueue_script('audio-script', get_theme_file_uri('/js/audio.js'), false, 1.0, true);
     };
-	
-	if ( is_front_page() ) {
-        wp_enqueue_style('front_css', get_theme_file_uri('src/scss/front.min.css'), false, 1.0, 'all');
-    } else {
-		wp_enqueue_style( 'main_css', get_theme_file_uri('src/scss/main.min.css'), false, 1.0, 'all');
-	};
+	wp_enqueue_style( 'main_css', get_theme_file_uri('src/scss/main.min.css'), false, 1.0, 'all');
     //wp_enqueue_style('google_fonts', 'https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;700&display=swap');
 	wp_enqueue_script( 'search', get_theme_file_uri('/js/search.js'), false, 1.0, true );
 	wp_localize_script( 'search', 'gocastVariables', array(

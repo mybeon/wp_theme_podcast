@@ -54,22 +54,5 @@ page_banner();
       <img src="<?php echo get_theme_file_uri("src/assets/img/video_about.jpg") ?>" alt="" />
     </section>
 
-    <section class="blog_posts pd">
-      <h2>blog posts</h2>
-      <div class="list_article">
-        <?php 
-            $homePosts = new WP_Query(array(
-                'posts_per_page' => 3,
-            ));
-
-            if ( $homePosts->have_posts() ) {
-                while ($homePosts->have_posts()) {
-                    $homePosts->the_post();
-                    get_template_part( 'templates/content', 'blog-card' );
-              }
-            }
-            wp_reset_postdata();
-        ?>
-      </div>
-    </section>
+    
     <?php get_footer(); ?>

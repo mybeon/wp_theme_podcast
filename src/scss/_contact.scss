@@ -1,4 +1,11 @@
 .form_container {
+  @media (max-width: 490px) {
+    width: 100%;
+    padding: unset;
+    form {
+      padding: 2rem !important;
+    }
+  }
   width: 80rem;
   box-shadow: $mainshadow;
   border-radius: 8px;

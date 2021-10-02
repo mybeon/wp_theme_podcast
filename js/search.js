@@ -171,3 +171,14 @@ const customPreloader = document.querySelector(".preloader");
 window.addEventListener("load", () =>
   customPreloader.classList.add("preloader_finish")
 );
+
+// menu js
+
+const menuIcon = document.querySelector(".burger_menu");
+const svgIcon = document.querySelector(".burger_menu i");
+
+menuIcon.addEventListener("click", () => {
+  document.querySelector(".main_header nav").classList.toggle("menu_clicked");
+  document.body.classList.toggle("body_menu");
+  svgIcon.classList.toggle("menu_clicked");
+});
